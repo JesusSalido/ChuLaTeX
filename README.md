@@ -1,2 +1,4 @@
 # ChuLaTeX
  Una "chuleta" muy "chula" de LaTeX
+
+_Este es un proyecto iniciado "hace muchos años" en una "lejana galaxia"..._ con el propósito de servir de referencia rápida a los alumnos de la Escuela Superior de Informática (Univ. de Castilla-La Mancha) con los que quise compartir mis experiencias con LaTeX y convencerlos de sus ventajas a la hora de emprender proyectos "ambiciosos" como la preparación de la memoria de un Proyecto Fin de Carrera (en la actualidad Trabajo Fin de Grado). Así surgió el curso de [LaTeX esencial para preparación de TFG y otros documentos académicos](http://visilab.etsii.uclm.es/?page_id=1468).
