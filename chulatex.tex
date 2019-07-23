@@ -10,13 +10,21 @@
 \usepackage[T1]{fontenc}
 \usepackage{type1ec}
 \usepackage[spanish,es-sloppy]{babel}
-%\usepackage[pdftex]{hyperref}
 \usepackage{newtxtext}
 %\usepackage{mathptmx}
 \usepackage[scaled=0.85]{couriers}
 \usepackage{textcomp,marvosym}
 \usepackage{graphicx}
 \usepackage{rotating}
+\usepackage{xcolor}
+\definecolor{palered}{rgb}{0.78, 0.03, 0.08}
+\usepackage[pdftex,
+	colorlinks=true, 
+	anchorcolor=palered, 
+	citecolor=palered, 
+	filecolor=palered, 
+	urlcolor=palered,
+	linkcolor=palered]{hyperref}
 
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
 	{ \geometry{top=.4in,left=.4in,right=.4in,bottom=.4in} }
@@ -75,9 +83,13 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
+%\begin{flushleft}
+%     \Large{\textbf{Chu\LaTeX}} \\
+%     {Una <<chuleta>> muy <<chula>> de \LaTeX} \\
+%\end{flushleft}
 \begin{flushleft}
-     \Large{\textbf{Chu\LaTeX}} \\
-     {Una <<chuleta>> muy <<chula>> de \LaTeX} \\
+     {\Large\textbf{Chu\LaTeX:}} {\large Una <<chuleta>> muy <<chula>> de \LaTeX} \\
+     \href{http://visilab.etsii.uclm.es/?page_id=1468}{\large \LaTeX{} esencial para TFG (ESI-UCLM)}
 \end{flushleft}
 
 %-------------------------
@@ -101,7 +113,7 @@
 \texttt{a4paper} & Tamaño del papel \\
 \texttt{twocolumn} & Texto a dos columnas \\
 \texttt{twoside}   & Ajustes para imprimir en ambas caras del papel \\
-\texttt{openany}/\texttt{openright} & Inicía cap. en cualquier página o sólo a la dcha.
+\texttt{openany}/\texttt{openright} & Inicia cap. en cualquier página o sólo a la dcha.
 \end{tabular}
 
 
@@ -118,23 +130,24 @@
                 @{}p{\linewidth-\the\MyLen}@{}}
 \texttt{inputenx}	& Codificación del texto de entrada [\texttt{utf8})]\\
 \texttt{babel}		& Soporte multilingue [\texttt{spanish}, \texttt{english}]\\
-\texttt{geometry}	& Definición de geometría de la página (tamaño y márgenes).\\
+\texttt{geometry}	& Definición de geometría de la página (tamaño y márgenes)\\
 \texttt{textcomp}	& Caracteres especiales (junto a paquetes \texttt{marvosym} y \texttt{pifont}). \\
-\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{thm}, \texttt{symb}).\\
+\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{thm}, \texttt{symb}, \texttt{fonts})\\
 \texttt{fontenc}	& Codificación de salida [\texttt{T1}]\\
 %\texttt{setspace}	& Esp. interlineal (Ops.:\texttt{{single}, \texttt{double}, \texttt{onehalf}}\texttt{spacing}). \\
 \texttt{url}		& Formato adecuado de URLs (mediante \emph{cmd.} \verb!\url!). \\
-\texttt{hyperref}	& Creación de PDF enriquecidos.\\
-\texttt{graphicx}	& Inclusión de figuras.\\
-\texttt{rotating}	& Rotación de objetos (colocación apaisada de fíguras y tablas).\\
-\texttt{caption}	& Configuración de títulos de figuras y tablas. \\
-%\texttt{secsty}	& Configuración de títulos de secciones. \\
+\texttt{hyperref}	& Creación de PDF enriquecidos\\
+\texttt{graphicx}	& Inclusión de figuras\\
+\texttt{rotating}	& Rotación de objetos (colocación apaisada de fíguras y tablas)\\
+\texttt{caption}	& Configuración de títulos de figuras y tablas \\
+%\texttt{secsty}	& Configuración de títulos de secciones \\
 \texttt{fancyhdr}	& Facilita la \emph{conf}. nativa de cabeceras y pies de página.\\
-\texttt{paralist}	& Mejora del control de listas.\\
-\texttt{multicol}	& Listas en varias columnas.\\
-\texttt{listings}	& Permite insertar porciones de código fuente.\\
-%\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF.\\
-%\texttt{etex}		& Soluciona errores de desbordamiento.\\
+\texttt{parskip}	& Control de espaciado entre párrafos\\
+%\texttt{paralist}	& Mejora el control de listas\\
+\texttt{multicol}	& Listas en varias columnas\\
+\texttt{listings}	& Permite insertar porciones de código fuente\\
+%\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF\\
+%\texttt{etex}		& Soluciona errores de desbordamiento\\
 \end{tabular}
 
 
@@ -144,16 +157,16 @@
 \settowidth{\MyLen}{\texttt{.lstlistoflistings.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\title{!\emph{texto}\verb!}!	& Título del documento.\\
-\verb!\author{!\emph{texto}\verb!}!	& Autor del documento.\\
-\verb!\date{!\emph{texto}\verb!}!	& Fecha (\verb+\today+, genera fecha actual). \\
-\verb!\begin{document}! 			& Declaración de inicio tras el preámbulo.\\
-\verb!\maketitle! 					& Genera pág. de título con info.\ suministrada. \\
-\verb!\tableofcontents! 			& Crea el índice de contenidos (TOC).\\
-\verb!\listoffigures!   			& Lista de figuras. \\
-\verb!\listoftables!    			& Lista de cuadros (tablas). \\
-\verb!\lstlistoflistings!    		& Lista de listados. \\
-\verb!\begin{abstract}! 			& Resumen del documento. \\[0.7mm] 
+\verb!\title{!\emph{texto}\verb!}!	& Título del documento\\
+\verb!\author{!\emph{texto}\verb!}!	& Autor del documento\\
+\verb!\date{!\emph{texto}\verb!}!	& Fecha (\verb+\today+, genera fecha actual) \\
+\verb!\begin{document}! 			& Declaración de inicio tras el preámbulo\\
+\verb!\maketitle! 					& Genera pág. de título con info\ suministrada. \\
+\verb!\tableofcontents! 			& Crea el índice de contenidos (TOC)\\
+\verb!\listoffigures!   			& Lista de figuras \\
+\verb!\listoftables!    			& Lista de cuadros (tablas) \\
+\verb!\lstlistoflistings!    		& Lista de listados \\
+\verb!\begin{abstract}! 			& Resumen del documento \\[0.7mm] 
 \end{tabular}
 
 
@@ -161,8 +174,8 @@
 
 %-------------------------
 \subsection{Pies y cabeceras}
-\verb!\pagestyle{!\emph{sty.}\verb!}!: Estilo (\texttt{empty}, \texttt{plain}, \texttt{headings} y \texttt{myheadings}).\\
-\verb!\thispagestyle{!\emph{sty.}\verb!}!: Estilo sólo aplicado a pág. actual.\\
+\verb!\pagestyle{!\emph{sty.}\verb!}!: Estilo (\texttt{empty}, \texttt{plain}, \texttt{headings} y \texttt{myheadings})\\
+\verb!\thispagestyle{!\emph{sty.}\verb!}!: Estilo sólo aplicado a pág. actual\\
 
 
 
@@ -178,10 +191,10 @@
 \end{multicols}
 
 
-$^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).\\[0.7mm]
-\verb!\section*{!\emph{título}\verb!}!: sección sin numerar, ni incluida en TOC.\\
-\verb!\setcounter{secnumdepth}{!$x$\verb!}!: suprime la numeración al nivel $>x$.
-\verb!\setcounter{tocdepth}{!$x$\verb!}!: suprime del TOC las secciones de nivel $>x$.
+$^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) \\[0.7mm]
+\verb!\section*{!\emph{título}\verb!}!: sección sin numerar, ni incluida en TOC\\
+\verb!\setcounter{secnumdepth}{!$x$\verb!}!: suprime la numeración al nivel $>x$
+\verb!\setcounter{tocdepth}{!$x$\verb!}!: suprime del TOC las secciones de nivel $>x$
 \verb!\the!$\langle cnt \rangle$: imprime el valor del contador $cnt$ (el valor de $cnt$ puede ser \texttt{page}, \texttt{chapter}, \texttt{section}, etc.)
 
 
@@ -195,11 +208,11 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).
 \settowidth{\MyLen}{\texttt{.pageref.marker..}}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\label{!\emph{id.label}\verb!}!   &  Marca (p.ej. \texttt{sec:item}) para una referencia. \\
-\verb!\ref{!\emph{id.label}\verb!}!   &  Genera el nº de sección. \\
-\verb!\pageref{!\emph{id.label}\verb!}! &  Genera el nº de página. \\
-\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración. \\
-\verb!\footnote{!\emph{nota}\verb!}!  &  Genera una nota al pie de página. \\
+\verb!\label{!\emph{id.label}\verb!}!   &  Marca (p.ej. \texttt{sec:item}) para una referencia \\
+\verb!\ref{!\emph{id.label}\verb!}!   &  Genera el nº de sección \\
+\verb!\pageref{!\emph{id.label}\verb!}! &  Genera el nº de página \\
+\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración \\
+\verb!\footnote{!\emph{nota}\verb!}!  &  Genera una nota al pie de página \\
 \end{tabular}
 
 
@@ -211,17 +224,17 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).
 \settowidth{\MyLen}{\texttt{.begin.dingautolist.....}}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{enumerate}!        &  Enumeración. \\
-\verb!\begin{compactenum}!      &  Enumeración compacta (paquete \texttt{paralist})\\
-\verb!\begin{dingautolist}{!$n$\verb!}!    &  Enumeración desde símbolo \texttt{dingbat} $n$.\\
-\verb!\begin{itemize}!          &  Lista marcada. \\
-\verb!\begin{compactitem}!      &  Lista marcada compacta (paquete \texttt{paralist}). \\
+\verb!\begin{enumerate}!        &  Enumeración \\
+%\verb!\begin{compactenum}!      &  Enumeración compacta (paquete \texttt{paralist})\\
+\verb!\begin{dingautolist}{!$n$\verb!}!    &  Enumeración desde símbolo \texttt{dingbat} $n$\\
+\verb!\begin{itemize}!          &  Lista marcada \\
+%\verb!\begin{compactitem}!      &  Lista marcada compacta (paquete \texttt{paralist}) \\
 \verb!\begin{dinglist}{!$n$\verb!}!   &  Lista marcada con símbolo $n$ \texttt{dingbat}.\\
 \verb!\begin{description}!      &  Lista descriptiva. \\
-\verb!\begin{multicol}{<n>}!    &  Lista en $n$ columnas (paquete \texttt{multicol}). \\[0.5mm]
+\verb!\begin{multicol}{<n>}!    &  Lista en $n$ columnas (paquete \texttt{multicol}) \\[0.5mm]
 \end{tabular}
 
-\verb!\item[!\emph{c}\verb!]! \emph{texto}: Entrada de lista usando \emph{c} como marca (obligado en \emph{descrip.}).\\
+\verb!\item[!\emph{c}\verb!]! \emph{texto}: Entrada de lista usando \emph{c} como marca (obligado en \emph{descrip.})\\
 %\verb!\begin{quote}!: Bloque sangrado para una cita.\\
 %\verb!\begin{quotation}!: Como quote con párrafos sangrados.\\
 %\verb!\begin{verse}!: Para versos (\verb!\\! separando versos de una estrofa).\\
@@ -284,9 +297,9 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).
 \settowidth{\MyLen}{\texttt{.begin.verbatim..} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb@\begin{verbatim}@ & Entorno literal. \\
-\verb@\begin{verbatim*}@ & Muestra los espacios como en \verb*@ @. \\
-\verb@\verb|text|@ & El texto entre los delimitadores es literal.
+\verb@\begin{verbatim}@ & Entorno literal \\
+\verb@\begin{verbatim*}@ & Muestra los espacios como en \verb*@ @ \\
+\verb@\verb|text|@ & El texto entre los delimitadores es literal
 %                   &(el delimitador puede ser: `\texttt{|}', `\texttt{+}', `\texttt{@}', ...).
 \end{tabular}
 
@@ -305,10 +318,10 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).
 \end{tabular}
 
 \textbf{Variables de longitud}\\
-\verb!\parindent!: Longitud de sangrado 1ª línea de párrafo (15pt, predef.). \\
-\verb!\parskip!: Espaciado entre párrafos (0pt plus 1pt, predef.). \\
-\verb!\textwidth!: Ancho del texto. \\
-\verb!\linewidth!: Ancho de la línea en el entorno local. \\
+\verb!\parindent!: Longitud de sangrado 1ª línea de párrafo (15pt, predef.) \\
+\verb!\parskip!: Espaciado entre párrafos (0pt plus 1pt, predef.) \\
+\verb!\textwidth!: Ancho del texto \\
+\verb!\linewidth!: Ancho de la línea en el entorno local \\
 
 
 
@@ -325,7 +338,7 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC).
 \verb!\normalsize!&10pt&11pt&12pt&\verb!\Huge!&25pt&25pt&25pt\\[0.7mm]
 \end{tabular}
 
-Usados dentro de llaves o afectando a todo un entorno (o documento).
+Usados dentro de llaves o afectando a todo un entorno (o documento)
 
 
 
@@ -338,7 +351,7 @@ Usados dentro de llaves o afectando a todo un entorno (o documento).
 \subsection{Tipografías en \LaTeX}
 
 \ding{118} En español debe emplearse paquete \texttt{fontenc} con codificación \texttt{T1}\\
-(en inglés no es preciso).
+(en inglés no es preciso)
 \begin{tabular}{@{}c|@{\hspace{1ex}}c@{\hspace{1ex}}c@{\hspace{1ex}}c@{}}
 \textbf{Paquete}   &  \textbf{Romama} (rm) & \textbf{Paloseco} (sf) & \textbf{Teletipo} (tt) \\ \hline
 (predefinida) &  {\usefont{T1}{cmr}{m}{n} CM Roman} & {\usefont{T1}{cmss}{m}{n}CMSSerif} & {\usefont{T1}{cmtt}{m}{n}CMttype} \\
@@ -354,9 +367,9 @@ Usados dentro de llaves o afectando a todo un entorno (o documento).
 emplea la familia correspondiente de la tipografía predefinida.\\
 Otros paquetes:\\
 
-\texttt{[opcs.]\textbf{libertine}}: Libertine.\\
-\texttt{[opcs.]\textbf{newtxtext}} + \texttt{\textbf{newtxmath}}: Times.\\
-\texttt{[opcs.]\textbf{newpxtext}} + \texttt{\textbf{newpxmath}}: Palatino.\\ 
+\texttt{[opcs.]\textbf{libertine}}: Libertine\\
+\texttt{[opcs.]\textbf{newtxtext}} + \texttt{\textbf{newtxmath}}: Times\\
+\texttt{[opcs.]\textbf{newpxtext}} + \texttt{\textbf{newpxmath}}: Palatino\\ 
 Opciones: \texttt{scaled} (escalado), \texttt{osf} (\emph{old style figures})
 
 
@@ -367,25 +380,25 @@ Opciones: \texttt{scaled} (escalado), \texttt{osf} (\emph{old style figures})
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
 %\verb!\\!          &  Salto de línea sin iniciar otro párrafo.  \\
-\verb!\newline!			&  Salto de línea sin iniciar párrafo.  \\
-\verb!\\[!$l$\verb!]!	&  Salto de línea (opc. long. $l$) en el mismo párrafo.   \\
-\verb!\\*!         		&  Inhibe salto de página posterior. \\
-\verb!\noindent!   		&  No sangra la línea actual. \\
-\verb!\newpage!    		&  Salto de página. \\
-\verb!\pagebreak!  		&  Completa página y fuerza nuevo inicio. \\
-\verb!\kill!       		&  Inhibe impresión de línea actual. \\
-\verb!~!       			&  Espacio de no separación (p.ej. \verb!D.E.~Knuth!). \\
-\verb!$\sim$!  			&  Imprime $\sim$ en vez de \~{} (producido por \verb!\~{}!). \\
+\verb!\newline!			&  Salto de línea sin iniciar párrafo  \\
+\verb!\\[!$l$\verb!]!	&  Salto de línea (opc. long. $l$) en el mismo párrafo   \\
+\verb!\\*!         		&  Inhibe salto de página posterior \\
+\verb!\noindent!   		&  No sangra la línea actual \\
+\verb!\newpage!    		&  Salto de página \\
+\verb!\pagebreak!  		&  Completa página y fuerza nuevo inicio \\
+\verb!\kill!       		&  Inhibe impresión de línea actual \\
+\verb!~!       			&  Espacio de no separación (p.ej. \verb!D.E.~Knuth!) \\
+\verb!$\sim$!  			&  Imprime $\sim$ en vez de \~{} (producido por \verb!\~{}!) \\
 \verb!\hspace{!$l$\verb!}! 		& Espacio horizontal de medida $l$
-                                (p.ej. $l=\mathtt{20pt}$). \\
-\verb!\hfill!  			& Relleno en blanco hasta completar línea.\\
-\verb!\hrulefill!  		& Relleno con raya. \\
-\verb!\dotfill!    		& Relleno con puntos. \\
-\verb!\dingfill{!$c$\verb!}!    & Relleno con símbolo $c$ de tabla \texttt{dingbat}. \\
-\verb!\dingline{!$c$\verb!}!    & Línea formada por símbolo $c$ de tabla \texttt{dingbat}. \\
-\verb!\rule{!$w$\verb!}{!$h$\verb!}! & Línea de ancho $w$ y altura $h$. \\
-\verb!\vspace{!$l$\verb!}! 		& Espacio vertical de medida $l$. \\
-\verb!\vfill!  			& Espacio de relleno vertical hasta completar página. \\
+                                (p.ej. $l=\mathtt{20pt}$) \\
+\verb!\hfill!  			& Relleno en blanco hasta completar línea\\
+\verb!\hrulefill!  		& Relleno con raya \\
+\verb!\dotfill!    		& Relleno con puntos \\
+\verb!\dingfill{!$c$\verb!}!    & Relleno con símbolo $c$ de tabla \texttt{dingbat} \\
+\verb!\dingline{!$c$\verb!}!    & Línea formada por símbolo $c$ de tabla \texttt{dingbat} \\
+\verb!\rule{!$w$\verb!}{!$h$\verb!}! & Línea de ancho $w$ y altura $h$ \\
+\verb!\vspace{!$l$\verb!}! 		& Espacio vertical de medida $l$ \\
+\verb!\vfill!  			& Espacio de relleno vertical hasta completar página \\
 \end{tabular}
 
 
@@ -395,10 +408,10 @@ Opciones: \texttt{scaled} (escalado), \texttt{osf} (\emph{old style figures})
 %-------------------------
 \subsection{División de palabras y párrafos}
 %La división automática de palabras (guionado) está activada y adaptada al idioma del texto mediante la opción de paquete \emph{babel} (recordar configurar la distribución).\\[0.7mm]
-\verb!\hyphenation{pa-la-bra}!: Guionado para \emph{palabra} (en preámbulo).\\
-\verb!--!: Guión medio (p.ej. rango 1--5) (sólo en idioma inglés).\\
-\verb!---!: Guión largo o parentético (p.ej. ---dijo él---).\\
-\verb!~-! y \verb!~---!: Guiones no separables (disponibles con \texttt{[spanish]babel}).\\[0.7mm]
+\verb!\hyphenation{pa-la-bra}!: Guionado para \emph{palabra} (en preámbulo)\\
+\verb!--!: Guión medio (p.ej. rango 1--5) (sólo en idioma inglés)\\
+\verb!---!: Guión largo o parentético (p.ej. ---dijo él---)\\
+\verb!~-! y \verb!~---!: Guiones no separables (disponibles con \texttt{[spanish]babel})\\[0.7mm]
 
 %\verb!`'!: `Comilla simple'; \verb!``''!: ``Comilla doble inglesa''; \verb!<<>>!: <<
 %Comilla doble>>.\\[0.7mm]
@@ -471,7 +484,7 @@ Opciones: \texttt{scaled} (escalado), \texttt{osf} (\emph{old style figures})
 %-------------------------
 \section{Símbolos dingbat {\small (paquete \texttt{pifont})}}
 
-\verb!\ding{n}!: Genera símbolo de tabla \emph{dinbat}.\\
+\verb!\ding{n}!: Genera símbolo de tabla \emph{dinbat}\\
 
 \newlength{\ancho}
 \settowidth{\ancho}{999-s-}
@@ -531,17 +544,17 @@ Opciones: \texttt{scaled} (escalado), \texttt{osf} (\emph{old style figures})
 \section{Modo matemático {\small (paquetes \texttt{amsmath}, \texttt{amsthm} y \texttt{amssymb})}} 
 \textbf{Modos matemáticos}\\
 
-\ding{172} Ec. condensada en línea: \verb!\(!\emph{ec.}\verb!\)! o \verb!$!\emph{ec.}\verb!$!.\\
-\ding{173} Ec. sin numerar: \verb!\begin{displaymath}! o \verb!\[!\emph{ec.}\verb!\]! o \verb!$$!\emph{ec.}\verb!$$!.\\
-\ding{174} Ec. numerada: \verb!\begin{equation}!.\\[0.7mm]
+\ding{172} Ec. condensada en línea: \verb!\(!\emph{ec.}\verb!\)! o \verb!$!\emph{ec.}\verb!$!\\
+\ding{173} Ec. sin numerar: \verb!\begin{displaymath}! o \verb!\[!\emph{ec.}\verb!\]! o \verb!$$!\emph{ec.}\verb!$$!\\
+\ding{174} Ec. numerada: \verb!\begin{equation}!\\[0.7mm]
 
-\verb!\displaystyle!: ajusta el estilo de la ecuación al estilo expandido.\\[0.7mm]
+\verb!\displaystyle!: ajusta a estilo expandido\\[0.7mm]
 
-\verb!\begin{eqnarray}!: muestra varías fórmulas en sucesivas líneas (numeradas).\\
-\verb!\nonumber!: elimina nº de \emph{ec.} en la línea que aparece.\\
-\verb!\begin{eqnarray*}!: permite fórmulas en varias líneas (sin nº).\\
+\verb!\begin{eqnarray}!: muestra varias fórmulas en sucesivas líneas (numeradas)\\
+\verb!\nonumber!: elimina nº de \emph{ec.} en la línea que aparece\\
+\verb!\begin{eqnarray*}!: permite fórmulas en varias líneas (sin nº)\\
 \verb!\begin{array}!: muestra fórmula extendida a varias líneas (sin nº),\\
-con \texttt{\&} y \verb!\\! como en tabla.\\[0.7mm]
+con \texttt{\&} y \verb!\\! como en tabla\\[0.7mm]
 
 
 \textbf{Expresiones comunes}
@@ -576,7 +589,8 @@ $\cdot$         &  \verb!\cdot!  	\\
 $^{\circ}$      & \verb!^{\circ}! 	&
 $\circ$         &  \verb!\circ!  	&
 $\prime$        & \verb!\prime!  	&
-$\cdots$        &  \verb!\cdots!  	\\
+%$\cdots$        &  \verb!\cdots!  	\\
+$\oplus$        & \verb!\oplus!  	\\
 $\infty$        & \verb!\infty!  	&
 $\neg$          & \verb!\neg!  		&
 $\wedge$        & \verb!\wedge!  	&
@@ -596,7 +610,9 @@ $\Leftrightarrow$   &  \verb!\Leftrightarrow! \\
 $\dot a$        & \verb!\dot a!  	&
 $\hat a$        & \verb!\hat a!  	&
 $\bar a$        & \verb!\bar a!  	&
-$\tilde a$      & \verb!\tilde a!  	\\
+%$\tilde a$      & \verb!\tilde a!  	\\
+$\overline a$      & \verb!\overline a!  	\\
+%$\overline {(a+b)}$      & \verb!\overline {(a+b)}!  	\\
 $\alpha$        &  \verb!\alpha!  	&
 $\beta$         &  \verb!\beta!  	&
 $\gamma$        &  \verb!\gamma!  	&
@@ -653,14 +669,14 @@ $\Omega$        &  \verb!\Omega!
 \textbf{cm} & centímetro $=10$ mm $\approx 28,45$ pt \\
 \textbf{in} & pulgada $=25,4$ mm $\approx 72,27$ pt \\
 \textbf{pt} & punto $\approx 1/72$ pulgada $\approx 1/28$ cm \\
-\textbf{em} & $\approx$ anchura de una `M' en la tipografía actual. \\
-\textbf{ex} & $\approx$ altura de una `x' en la tipografía actual.\\[0.7mm]
+\textbf{em} & $\approx$ anchura de una `M' en la tipografía actual \\
+\textbf{ex} & $\approx$ altura de una `x' en la tipografía actual\\[0.7mm]
 \end{tabular}
 
 
 Una long. se puede expresar como proporción de longitud: \\
-P.ej. \verb!0.5\textwidth! (la mitad del ancho de texto).\\
-\verb!\the\!\texttt{<var>}: Muestra valor de variable \texttt{<var>} (sólo válido para longitudes).\\
+P.ej. \verb!0.5\textwidth! (la mitad del ancho de texto)\\
+\verb!\the\!\texttt{<var>}: Muestra valor de variable \texttt{<var>} (sólo válido para longitudes)\\
 
 
 
@@ -672,14 +688,14 @@ P.ej. \verb!0.5\textwidth! (la mitad del ancho de texto).\\
 \settowidth{\MyLen}{\texttt{.begin.equation..place.}}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{figure}[<pos>]!:    &  Añade una figura numerada. \\
-\verb!\begin{table}[<pos>]!:     &  Añade un cuadro (tabla) numerado. \\
+\verb!\begin{figure}[<pos>]!:    &  Añade una figura numerada \\
+\verb!\begin{table}[<pos>]!:     &  Añade un cuadro (tabla) numerado \\
 \end{tabular}
 Donde \texttt{<pos>} es una cadena indicativa de la posición con:\\
-\texttt{t}=top,  \texttt{b}=bottom, \texttt{h}=here, \texttt{p}=page, \texttt{!}=forzar aquí.\\
-\verb!\caption[!\emph{tít.corto}\verb!]{!\emph{título}\verb!}!: Título de objeto flotante (incluido en el entorno).\\
-\ding{118}  Recuerda: Coloca las etiquetas para refs. justo tras el título.\\
-Las tablas y listados con título en la parte superior y las figuras en la inferior.\\
+\texttt{t}=top,  \texttt{b}=bottom, \texttt{h}=here, \texttt{p}=page, \texttt{!}=forzar aquí\\
+\verb!\caption[!\emph{tít.corto}\verb!]{!\emph{título}\verb!}!: Título de objeto flotante (incluido en el entorno)\\
+\ding{118}  Recuerda: Coloca las etiquetas para refs. justo tras el título\\
+Las tablas y listados con título en la parte superior y las figuras en la inferior\\
 
 
 
@@ -688,8 +704,8 @@ Las tablas y listados con título en la parte superior y las figuras en la infer
 \subsection{Objetos apaisados en una página {\small (paquete \texttt{rotating})}}
 \begin{tabular}{@{}p{\the\MyLen}%
 		@{}p{\linewidth-\the\MyLen}@{}}
-	\verb!\begin{sidewaysfigure}!    &:  Añade una figura apaisada.\\
-	\verb!\begin{sidewaystable}!     &:  Añade una tabla apaisada. \\
+	\verb!\begin{sidewaysfigure}!    &:  Añade una figura apaisada\\
+	\verb!\begin{sidewaystable}!     &:  Añade una tabla apaisada \\
 \end{tabular}
  
 
@@ -698,18 +714,18 @@ Las tablas y listados con título en la parte superior y las figuras en la infer
 
 %-------------------------
 \subsection{Figuras {\small (paquete \texttt{graphicx})}}
-\verb!\graphicspath{{!\emph{path}\verb!}}!: Directorios de figuras.\\
+\verb!\graphicspath{{!\emph{path}\verb!}}!: Directorios de figuras\\
 \verb!\DeclareGraphicsExtensions{.pdf,.png,.jpg}!: Orden de sel. de figs.
-\verb!\includegraphics[!\emph{opc.}\verb!]{!\emph{fich.}\verb!}!: Incluye figura en documento.\\
+\verb!\includegraphics[!\emph{opc.}\verb!]{!\emph{fich.}\verb!}!: Incluye figura en documento\\
 
 \textbf{Opciones de \textbackslash \texttt{includegraphics}:}\\
 
 \settowidth{\MyLen}{\texttt{height=.height=.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\texttt{width=l}, \texttt{height=l}      &  Ancho,alto de figura (sólo especificar el mayor).\\
-\texttt{scale=l}, \texttt{angle=l}       &  Escalado, giro (grados en sentido antihorario).\\
-\texttt{page=n}       &  Especifica la pág. \texttt{n} en un archivo PDF multipágina.\\[0.7mm]
+\texttt{width=l}, \texttt{height=l}      &  Ancho,alto de figura (sólo especificar el mayor)\\
+\texttt{scale=l}, \texttt{angle=l}       &  Escalado, giro (grados en sentido antihorario)\\
+\texttt{page=n}       &  Especifica la pág. \texttt{n} en un archivo PDF multipágina\\[0.7mm]
 \end{tabular}
 
 
@@ -718,7 +734,7 @@ Las tablas y listados con título en la parte superior y las figuras en la infer
 \texttt{pdflatex}:\\
 \quad \texttt{\textbf{.pdf}} \ding{220} gráficos vectoriales,\\
 \quad \texttt{\textbf{.jpg}} ($\geq$ 100 ppi) \ding{220} imágenes,$^*$\\
-\quad \texttt{\textbf{.png}} ($\geq$75 ppi) \ding{220} capturas de pantalla.$^*$\\
+\quad \texttt{\textbf{.png}} ($\geq$75 ppi) \ding{220} capturas de pantalla$^*$\\
 $^*$ Los fondos blancos y uniformes deben convertirse en transparentes.
 
 
@@ -727,33 +743,33 @@ $^*$ Los fondos blancos y uniformes deben convertirse en transparentes.
 %-------------------------
 \subsection{Entorno \texttt{tabular} }
 \verb!\begin{tabular}[pos]{cols}! \\
-\verb!\begin{tabular*}{ancho}[pos]{cols}!: Con control de anchura.\\
-Con \texttt{\&} y \verb!\\! para separar columnas y filas.\\[0.7mm]
+\verb!\begin{tabular*}{ancho}[pos]{cols}!: Con control de anchura\\
+Con \texttt{\&} y \verb!\\! para separar columnas y filas\\[0.7mm]
 
 \textbf{Especificación de columnas en entorno \texttt{tabular}}
 \settowidth{\MyLen}{\texttt{p}\{\emph{width}\} \ }
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
-\texttt{lcr}    &   Justificación en col. (\texttt{l}=\emph{left}, \texttt{c}=\emph{center}, \texttt{r}=\emph{right}).  \\
+\texttt{lcr}    &   Justificación en col. (\texttt{l}=\emph{left}, \texttt{c}=\emph{center}, \texttt{r}=\emph{right})  \\
 %\texttt{c}    &   Columna centrada (\emph{center}).  \\
 %\texttt{r}    &   Columna justificada a la derecha (\emph{right}). \\
 \verb!p{!\emph{ancho}\verb!}!  &  Igual que %
-                              \verb!\parbox[t]{!\emph{ancho}\verb!}!. \\ 
+                              \verb!\parbox[t]{!\emph{ancho}\verb!}! \\ 
 \verb!@{!\emph{decl}\verb!}!   &  Inserta \emph{decl} en vez del 
-                                   espacio entre columnas. \\
-\verb!|!      &   Inserta una línea vertical entre columnas.\\[0.7mm] 
+                                   espacio entre columnas \\
+\verb!|!      &   Inserta una línea vertical entre columnas\\[0.7mm] 
 \end{tabular}
 
 \textbf{Elementos de entorno \texttt{tabular}}
 \settowidth{\MyLen}{\texttt{.cline.x-y..}}
 \begin{tabular}{@{}p{\the\MyLen}@{}p{\linewidth-\the\MyLen}@{}}
-\verb!\hline!           &  Línea horizontal entre filas.  \\
+\verb!\hline!           &  Línea horizontal entre filas  \\
 \verb!\cline{!$x$\verb!-!$y$\verb!}!  &
-                        Línea horizontal a través de las columnas $x$ e $y$. \\
+                        Línea horizontal a través de las columnas $x$ e $y$ \\
 \verb!\multicolumn{!\emph{n}\verb!}{!\emph{cols}\verb!}{!\emph{texto}\verb!}! \\
         &  Una celda atraviesa \emph{n} columnas, con la especificación \emph{cols}.\\[0.7mm] 
 \end{tabular}
 
-\verb!\setlength{\tabcolsep}{!$l$\verb!}!: fija el espacio entre columnas a $l$.\\
+\verb!\setlength{\tabcolsep}{!$l$\verb!}!: fija el espacio entre columnas a $l$\\
 
 
 
@@ -767,7 +783,7 @@ Con \texttt{\&} y \verb!\\! para separar columnas y filas.\\[0.7mm]
 \end{tabular}
 
 Fijar tabuladores en líneas <<invisibles>> finalizándolas con \verb!\kill!\\
-Usar \verb!\\! para separar líneas.
+Usar \verb!\\! para separar líneas
 
 
 
@@ -777,28 +793,28 @@ Usar \verb!\\! para separar líneas.
 %-------------------------
 %-------------------------
 \section{Cajas (boxes)}
-\ding{118} Cualquier elemento se puede colocar en una caja (box) definida por: \emph{ancho (width), alto (height), profundidad (depth)} y posición del contenido (\texttt{l}=izda., \texttt{r}=dcha., \texttt{c}=central, \texttt{s}=expandida).\\[0.7mm]
+\ding{118} Cualquier elemento se puede colocar en una caja (box) definida por: \emph{ancho (width), alto (height), profundidad (depth)} y posición del contenido (\texttt{l}=izda., \texttt{r}=dcha., \texttt{c}=central, \texttt{s}=expandida)\\[0.7mm]
  
-\verb!\mbox{!\emph{texto}\verb!}!: Crea una caja con el texto (no sufre guionado).\\
-\verb!\makebox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja con el contenido dado.\\
-\verb!\parbox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja tipo párrafo con el contenido.\\
-\verb!\fbox{!\emph{obj.}\verb!}!: Crea una caja de texto con borde.\\
-\verb!\framebox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja con borde y el contenido dado.\\
+\verb!\mbox{!\emph{texto}\verb!}!: Crea una caja con el texto (no sufre guionado)\\
+\verb!\makebox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja con el contenido dado\\
+\verb!\parbox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja tipo párrafo con el contenido\\
+\verb!\fbox{!\emph{obj.}\verb!}!: Crea una caja de texto con borde\\
+\verb!\framebox[!\emph{ancho}\verb!][!\emph{pos.}\verb!]{!\emph{obj.}\verb!}!: Crea una caja con borde y el contenido dado\\
 \verb!\begin{minipage}[!\emph{pos.}\verb!][!\emph{alto}\verb!][!\emph{posRel.}\verb!]!: Crea una pequeña pág.\\
-\verb!\fboxrule!: Grosor del borde de la caja (\emph{def.} 0.4pt).\\
-\verb!\fboxsep!: Separación entre el borde y la caja (\emph{def.} 3.0pt).\\[0.7mm]
+\verb!\fboxrule!: Grosor del borde de la caja (\emph{def.} 0.4pt)\\
+\verb!\fboxsep!: Separación entre el borde y la caja (\emph{def.} 3.0pt)\\[0.7mm]
 
 
 
 
 %-------------------------
 \textbf{Dimensionado y rotación} {\small (paquetes \texttt{graphicx} y \texttt{rotating})}\\
-\verb!\scalebox{!\emph{esc-H}\verb!}[!\emph{esc-V}\verb!]{!\emph{obj.}\verb!}!: Escala el contenido de una caja.\\
-\verb!\reflectbox{!\emph{obj.}\verb!}!: Crea una caja con el objeto reflejado.\\
-\verb!\resizebox{!\emph{ancho}\verb!}{!\emph{alto}\verb!}{!\emph{obj.}\verb!}!: Reajusta el tamaño de la caja.\\
-\verb!\resizebox*{!\emph{ancho}\verb!}{!\emph{altoTot}\verb!}{!\emph{obj.}\verb!}!: Reajusta el tamaño de la caja.\\
-\verb!\rotatebox[!\emph{opc.}\verb!]{!\emph{áng.}\verb!}{!\emph{obj.}\verb!}!: Rota una caja el ángulo indicado.\\
-\verb!\begin{sideways}!: Rotación de 90$^\circ$ (paquete \texttt{rotating}).\\
+\verb!\scalebox{!\emph{esc-H}\verb!}[!\emph{esc-V}\verb!]{!\emph{obj.}\verb!}!: Escala el contenido de una caja\\
+\verb!\reflectbox{!\emph{obj.}\verb!}!: Crea una caja con el objeto reflejado\\
+\verb!\resizebox{!\emph{ancho}\verb!}{!\emph{alto}\verb!}{!\emph{obj.}\verb!}!: Reajusta el tamaño de la caja\\
+\verb!\resizebox*{!\emph{ancho}\verb!}{!\emph{altoTot}\verb!}{!\emph{obj.}\verb!}!: Reajusta el tamaño de la caja\\
+\verb!\rotatebox[!\emph{opc.}\verb!]{!\emph{áng.}\verb!}{!\emph{obj.}\verb!}!: Rota una caja el ángulo indicado\\
+\verb!\begin{sideways}!: Rotación de 90$^\circ$ (paquete \texttt{rotating})\\
 
 
 
@@ -806,11 +822,11 @@ Usar \verb!\\! para separar líneas.
 
 %-------------------------
 \section{Bibliografía}
-\verb!\begin{thebibliography}{99}!: Bibliografía (con ancho máx. de [\emph{cita}]).\\
-\verb!\bibitem{!\emph{clave}\verb!}!: Entrada de la bibliografía.\\
-\verb!\cite[!\emph{txt}\verb!]{!\emph{clave1, clave2,...}\verb!}!: Añade [\emph{cita}] en el texto (opc. [\emph{txt}, \emph{cita}]).\\
-\verb!\nocite{!\emph{clave}\verb!}!: Añade la obra a la bibliografía, sin [\emph{cita}] en texto.\\
-\verb!\nocite{*}!: Todas las obras en la bibliografía aunque no estén citadas.\\
+\verb!\begin{thebibliography}{99}!: Bibliografía (con ancho máx. de [\emph{cita}])\\
+\verb!\bibitem{!\emph{clave}\verb!}!: Entrada de la bibliografía\\
+\verb!\cite[!\emph{txt}\verb!]{!\emph{clave1, clave2,...}\verb!}!: Añade [\emph{cita}] en el texto (opc. [\emph{txt}, \emph{cita}])\\
+\verb!\nocite{!\emph{clave}\verb!}!: Añade la obra a la bibliografía, sin [\emph{cita}] en texto\\
+\verb!\nocite{*}!: Todas las obras en la bibliografía aunque no estén citadas\\
 
 
 
@@ -819,9 +835,9 @@ Usar \verb!\\! para separar líneas.
 %-------------------------
 \subsection{Bibliografía con \texttt{bibtex}}
 
-\verb!\bibliographystyle{!\emph{estilo}\verb!}!: Define el estilo de la bibliografía.\\
-\verb!\bibliography{!\emph{<fichero>.bib}\verb!}!: Incluye las fuentes citadas en el documento.\\
-\ding{118} Estilos usuales: \texttt{plain}, \texttt{acm}, \texttt{ieeetr}, \texttt{alpha}, \texttt{abbrv}, \texttt{unsrt}.\\
+\verb!\bibliographystyle{!\emph{estilo}\verb!}!: Define el estilo de la bibliografía\\
+\verb!\bibliography{!\emph{<fichero>.bib}\verb!}!: Incluye las fuentes citadas en el documento\\
+\ding{118} Estilos usuales: \texttt{plain}, \texttt{acm}, \texttt{ieeetr}, \texttt{alpha}, \texttt{abbrv}, \texttt{unsrt}\\
 
 
 
@@ -830,16 +846,16 @@ Usar \verb!\\! para separar líneas.
 \subsection{Bibliografía con \texttt{biblatex}}
 
 \verb!\usepackage[backend=biber,sortcites]{biblatex}!\\
-Opciones: \verb|defernumbers,style,autolang,language|.\\ 
+Opciones: \verb|defernumbers,style,autolang,language|\\ 
 Estilos: \verb|ieee,iso-numeric,apa,mla-new,trad-<bibtex>|\\
 Usar junto a:\verb!\usepackage[autostyle]{csquotes}!\\
 \verb!\addbibresource{<fichero>.bib}! (poner extensión)
 \\[0.7mm]
 Citas: \verb!\cite[ver][#p]{id.}! \ding{220} [ver \#id, pág. \#p]\\
-\verb|\cite<tt>|: siendo \texttt{tt} title, url, year.\\
+\verb|\cite<tt>|: siendo \texttt{tt} title, url, year\\
 \verb|\footcite,\parencite,\textcite|\\
-\verb|\printbibliography[title=Título|: Imprime bibliografía.\\
-Opciones (impresión selectiva): \texttt{keyword}, \texttt{notkeyword}, \texttt{type}, \texttt{nottype}.\\
+\verb|\printbibliography[title=Título|: Imprime bibliografía\\
+Opciones (impresión selectiva): \texttt{keyword}, \texttt{notkeyword}, \texttt{type}, \texttt{nottype}\\
 
 
 
@@ -851,31 +867,32 @@ Opciones (impresión selectiva): \texttt{keyword}, \texttt{notkeyword}, \texttt{
 \section{Personalización de \LaTeX}
 %En las definiciones de comandos y entornos \emph{args.} representa el número de argumentos y \emph{def.} la definición mediante instrucciones \LaTeX.\\[0.7mm]
 
-\verb!\newcommand{!\emph{cmd.}\verb!}[!\emph{args.}\verb!]{!\emph{def.}\verb!}!: Define el nuevo comando \emph{cmd}.\\
-\verb!\renewcommand{!\emph{cmd.}\verb!}[!\emph{args.}\verb!]{!\emph{def.}\verb!}!: Redefine un comando \emph{cmd.} ya definido.\\[0.7mm]
+\verb!\newcommand{!\emph{cmd.}\verb!}[!\emph{args.}\verb!]{!\emph{def.}\verb!}!: Define el nuevo comando \emph{cmd}\\
+\verb!\renewcommand{!\emph{cmd.}\verb!}[!\emph{args.}\verb!]{!\emph{def.}\verb!}!: Redefine un comando \emph{cmd.} ya definido\\[0.7mm]
 
-\ding{118} Algunos nombres que pueden redefinirse: \verb!\tablename!, \verb!\figurename!, \verb!\abstractname!, \verb!\contentsname!, \verb!\listfigurename!, \verb!\listtablename!, \verb!\bibname! (clases \texttt{report} y \texttt{book}), \verb!\refname! (clase \texttt{article}).\\
+\ding{118} Algunos nombres que pueden redefinirse: \verb!\tablename!, \verb!\figurename!, \verb!\abstractname!, \verb!\contentsname!, \verb!\listfigurename!, \verb!\listtablename!, \verb!\bibname! (clases \texttt{report} y \texttt{book}), \verb!\refname! (clase \texttt{article})\\
 \ding{118} Para añadir un título en el índice señalado al nivel deseado:\\
 \verb|\addcontentsline{<índice>}{<nivel>}{<título>}|\\[0.7mm]
  
-\verb!\newenvironment{!\emph{env.}\verb!}[!\emph{args.}\verb!]{!\emph{antes}\verb!}{!\emph{después}\verb!}!: Define el nuevo entorno \emph{env}.\\
-\verb!\renewenvironment!: Ídem anterior para \emph{env.} ya definido.\\
-\verb!\newlength{!\emph{var}\verb!}!: Define una nueva variable de longitud \emph{var}.\\
-\verb!\setlength{!\emph{var}\verb!}{!$l$\verb!}!: Asigna $l$ a una \emph{var}. \emph{long}. \\[0.7mm]
+\verb!\newenvironment{!\emph{env.}\verb!}[!\emph{args.}\verb!]{!\emph{antes}\verb!}{!\emph{después}\verb!}!: Define el nuevo entorno \emph{env}\\
+\verb!\renewenvironment!: Ídem anterior para \emph{env.} ya definido\\
+\verb!\newlength{!\emph{var}\verb!}!: Define una nueva variable de longitud \emph{var}\\
+\verb!\setlength{!\emph{var}\verb!}{!$l$\verb!}!: Asigna $l$ a una \emph{var}. \emph{long} \\[0.7mm]
  
 
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
-\copyright{}  J\reflectbox{e}sús S\reflectbox{a}lido 2011 (basado en una idea original de Winston Chang, 2006)\\
+\copyright{}  \href{https://www.uclm.es/profesorado/jsalido}{J\reflectbox{e}sús S\reflectbox{a}lido} 2011 (basado en una idea original de Winston Chang, 2006)\\
 %\copyright{} Jesús Salido (2011) preparado para curso \LaTeX-UCLM (basado en una idea original de Winston Chang, 2006)
 % Historial de versiones
-\verb!$Revision: 4.0$, $Fecha: 15/02/2018$.!
-%\verb!$Revision: 3.1$, $Fecha: 09/02/2015$.!
-%\verb!$Revision: 3.0$, $Fecha: 27/02/2014$.!
-%\verb!$Revision: 2.2$, $Fecha: 27/02/2012$.!
-%\verb!$Revision: 2.0$, $Fecha: 3/02/2012$.!
-%\verb!$Revision: 1.0$, $Fecha: Marzo 2011$.!
+\verb!$Revision: 4.01$, $Fecha: 23/07/2019$!
+%\verb!$Revision: 4.0$, $Fecha: 15/02/2018$!
+%\verb!$Revision: 3.1$, $Fecha: 09/02/2015$!
+%\verb!$Revision: 3.0$, $Fecha: 27/02/2014$!
+%\verb!$Revision: 2.2$, $Fecha: 27/02/2012$!
+%\verb!$Revision: 2.0$, $Fecha: 3/02/2012$!
+%\verb!$Revision: 1.0$, $Fecha: Marzo 2011$!
 
 \end{multicols}
 \end{document}
