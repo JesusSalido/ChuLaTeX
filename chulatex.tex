@@ -121,32 +121,31 @@
 
 
 %-------------------------
-\subsection{Paquetes imprescindibles}
+\subsection{Paquetes populares}
 \ding{118}  Uso: \verb!\usepackage[!\emph{opcs.}\verb!]{!\emph{<paquete>}\verb!}!\\[0.7mm]
 
 
 \settowidth{\MyLen}{\texttt{.multicol.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\texttt{inputenx}	& Codificación del texto de entrada [\texttt{utf8})]\\
 \texttt{babel}		& Soporte multilingue [\texttt{spanish}, \texttt{english}]\\
 \texttt{geometry}	& Definición de geometría de la página (tamaño y márgenes)\\
-\texttt{textcomp}	& Caracteres especiales (junto a paquetes \texttt{marvosym} y \texttt{pifont}). \\
-\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{thm}, \texttt{symb}, \texttt{fonts})\\
+\texttt{textcomp}	& Misc. símbolos (también \texttt{fontawesome5}, \texttt{pifont} y \texttt{marvosym}). \\
+\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{symb}, \texttt{fonts})\\
 \texttt{fontenc}	& Codificación de salida [\texttt{T1}]\\
 %\texttt{setspace}	& Esp. interlineal (Ops.:\texttt{{single}, \texttt{double}, \texttt{onehalf}}\texttt{spacing}). \\
-\texttt{url}		& Formato adecuado de URLs (mediante \emph{cmd.} \verb!\url!). \\
+\texttt{enumitem}	& Mejora el control de listas\\
+\texttt{booktabs}	& Tablas mejoradas\\
 \texttt{hyperref}	& Creación de PDF enriquecidos\\
 \texttt{graphicx}	& Inclusión de figuras\\
 \texttt{rotating}	& Rotación de objetos (colocación apaisada de fíguras y tablas)\\
-\texttt{caption}	& Configuración de títulos de figuras y tablas \\
+\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF\\
+%\texttt{caption}	& Configuración de títulos de figuras y tablas \\
 %\texttt{secsty}	& Configuración de títulos de secciones \\
 \texttt{fancyhdr}	& Facilita la \emph{conf}. nativa de cabeceras y pies de página.\\
-\texttt{parskip}	& Control de espaciado entre párrafos\\
-%\texttt{paralist}	& Mejora el control de listas\\
-\texttt{multicol}	& Listas en varias columnas\\
+%\texttt{parskip}	& Control de espaciado entre párrafos\\
+%\texttt{multicol}	& Listas en varias columnas\\
 \texttt{listings}	& Permite insertar porciones de código fuente\\
-%\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF\\
 %\texttt{etex}		& Soluciona errores de desbordamiento\\
 \end{tabular}
 
@@ -163,9 +162,9 @@
 \verb!\begin{document}! 			& Declaración de inicio tras el preámbulo\\
 \verb!\maketitle! 					& Genera pág. de título con info\ suministrada. \\
 \verb!\tableofcontents! 			& Crea el índice de contenidos (TOC)\\
-\verb!\listoffigures!   			& Lista de figuras \\
-\verb!\listoftables!    			& Lista de cuadros (tablas) \\
-\verb!\lstlistoflistings!    		& Lista de listados \\
+\verb!\listof<!\emph{elem.}\verb!>! & Lista de (\texttt{figures}, \texttt{tables}, \texttt{listings})  \\
+%\verb!\listoftables!    			& Lista de cuadros (tablas) \\
+%\verb!\lstlistoflistings!    		& Lista de listados \\
 \verb!\begin{abstract}! 			& Resumen del documento \\[0.7mm] 
 \end{tabular}
 
@@ -211,7 +210,7 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) 
 \verb!\label{!\emph{id.label}\verb!}!   &  Marca (p.ej. \texttt{sec:item}) para una referencia \\
 \verb!\ref{!\emph{id.label}\verb!}!   &  Genera el nº de sección \\
 \verb!\pageref{!\emph{id.label}\verb!}! &  Genera el nº de página \\
-\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración \\
+%\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración \\
 \verb!\footnote{!\emph{nota}\verb!}!  &  Genera una nota al pie de página \\
 \end{tabular}
 
@@ -251,44 +250,23 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) 
 \newcommand{\FontCmd}[3]{\PBS\verb!\#1{!\emph{texto}\verb!}!  \> %
                          \verb!{\#2 !\emph{texto}\verb!}! \> %
                          \#1{#3}}
-\begin{tabular}{@{}l@{}l@{}l@{}}
-\emph{Orden (Pref.)}  & \emph{Declaración} & \emph{Efecto} \\ \hline
-\verb!\textrm{!\emph{texto}\verb!}!                    & %
-        \verb!{\rmfamily !\emph{texto}\verb!}    !               & %
-        \textrm{Tipo redondo (Serif)} \\
-\verb!\textsf{!\emph{texto}\verb!}!                    & %
-        \verb!{\sffamily !\emph{texto}\verb!}!               & %
-        \textsf{Palo seco (Sans Serif)} \\
-\verb!\texttt{!\emph{texto}\verb!}!                    & %
-        \verb!{\ttfamily !\emph{texto}\verb!}!               & %
-        \texttt{Teletipo (monoespaciada)} \\
-\verb!\textmd{!\emph{texto}\verb!}!                    & %
-        \verb!{\mdseries !\emph{texto}\verb!}!               & %
-        \textmd{Normal} \\
-\verb!\textbf{!\emph{texto}\verb!}!                    & %
-        \verb!{\bfseries !\emph{texto}\verb!}!               & %
-        \textbf{Negrita} \\
-\verb!\textup{!\emph{texto}\verb!}!                    & %
-        \verb!{\upshape !\emph{texto}\verb!}!               & %
-        \textup{Vertical} \\
-\verb!\textit{!\textit{texto}\verb!}!                    & %
-        \verb!{\itshape !\emph{texto}\verb!}!               & %
-        \emph{Itálica} \\
-\verb!\textsl{!\emph{texto}\verb!}!                    & %
-        \verb!{\slshape !\emph{texto}\verb!}!               & %
-        \textsl{Inclinada} \\
-\verb!\textsc{!\emph{texto}\verb!}!                    & %
-        \verb!{\scshape !\emph{texto}\verb!}!               & %
-        \textsc{Versalitas} \\
-\verb!\emph{!\emph{texto}\verb!}!                      & %
-        \verb!{\em !\emph{texto}\verb!}!               & %
-        \emph{Enfatizado (cursiva)} \\
-\verb!\textnormal{!\emph{texto}\verb!}  !                & %
-        \verb!{\normalfont !\emph{texto}\verb!}!       & %
-        \textnormal{Predefinida} \\[0.7mm]
+\begin{tabular}{@{}l@{}l@{}}
+\emph{Orden}  & \emph{Efecto} \\ \hline
+\verb!\textrm{!\emph{texto}\verb!}! &\textrm{Tipo redondo (Serif)} \\
+\verb!\textsf{!\emph{texto}\verb!}! & \textsf{Palo seco (Sans Serif)} \\
+\verb!\texttt{!\emph{texto}\verb!}! & \texttt{Teletipo (monoespaciada)} \\
+\verb!\textmd{!\emph{texto}\verb!}! & \textmd{Normal} \\
+\verb!\textbf{!\emph{texto}\verb!}! & \textbf{Negrita} \\
+\verb!\textup{!\emph{texto}\verb!}! & \textup{Vertical} \\
+\verb!\textit{!\textit{texto}\verb!}!& \emph{Itálica} \\
+\verb!\textsl{!\emph{texto}\verb!}! & \textsl{Inclinada} \\
+\verb!\textsc{!\emph{texto}\verb!}! & \textsc{Versalitas} \\
+\verb!\emph{!\emph{texto}\verb!}!  & \emph{Enfatizado (cursiva)} \\
+\verb!\textnormal{!\emph{texto}\verb!}  ! & \textnormal{Predefinida} \\[0.7mm]
 \end{tabular}
 
-%Usar preferentemente la \emph{orden} frente a la \emph{declaración} (mejor ajuste de espacio) y el texto  \emph{enfatizado} frente a la \textit{itálica} (adaptación automática de tipo).\\[0.7mm]
+$\triangleright$ Usa preferentemente \verb!\emph{!\emph{texto}\verb!}! 
+frente \verb!\textit{!\textit{texto}\verb!}!.\\[3mm]
 
 
 
