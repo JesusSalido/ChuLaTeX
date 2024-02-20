@@ -88,9 +88,12 @@
 %     {Una <<chuleta>> muy <<chula>> de \LaTeX} \\
 %\end{flushleft}
 \begin{flushleft}
-     {\Large\textbf{Chu\LaTeX:}} {\large Una <<chuleta>> muy <<chula>> de \LaTeX} \\
-     \href{http://visilab.etsii.uclm.es/?page_id=1468}{\large \LaTeX{} esencial para TFG (ESI-UCLM)}
+     {\Large\textbf{Chu\LaTeX:}} {\large Una <<chuleta>> muy <<chula>> de \LaTeX} \\[1.5mm]
+     {\small por Jesús Salido (\href{http://visilab.etsii.uclm.es/?page_id=1468}{UCLM}).}
 \end{flushleft}
+%     , para el curso: \href{http://visilab.etsii.uclm.es/?page_id=1468}{ \LaTeX{} para TFG.}}
+\newlength{\MyLen}
+\settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
 
 %-------------------------
 \section{Clases de documento} 
@@ -98,22 +101,16 @@
 \begin{tabular}{@{}ll@{}}
 %\emph{Clases}         & (Ajustes predefinidos)\\
 \verb!book!    & A doble cara por defecto, sin \verb+\abstract+ \\
-\verb!report!  & Igual a \texttt{book}, con \verb+\abstract+ y sin \verb!\part! \\
-\verb!article! & Sin \verb!\part! ni \verb!\chapter! \\[0.7mm]
+\verb!report!  & Igual a \texttt{book}, con \verb+\abstract+ y sin \verb!\part! .\\
+\verb!article! & Sin \verb!\part! ni \verb!\chapter! .\\[0.7mm]
 %\verb!letter!  & Carta. \\
 %\verb!slides!  & Transparencias para presentaciones.\\[0.7mm]
-\end{tabular}
-
-\newlength{\MyLen}
-\settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
-\begin{tabular}{@{}ll@{}}
-                %\hline
-\emph{Opciones} & (Modifican valores predefinidos) \\
-\texttt{10pt}/\texttt{11pt}/\texttt{12pt} & Tamaño de letra \\
-\texttt{a4paper} & Tamaño del papel \\
-\texttt{twocolumn} & Texto a dos columnas \\
+\emph{Opciones} & (Modifican valores predefinidos). \\
+\texttt{10pt}/\texttt{11pt}/\texttt{12pt} & Tamaño de letra. \\
+\texttt{a4paper} & Tamaño del papel. \\
+\texttt{twocolumn} & Texto a dos columnas. \\
 \texttt{twoside}   & Ajustes para imprimir en ambas caras del papel \\
-\texttt{openany}/\texttt{openright} & Inicia cap. en cualquier página o sólo a la dcha.
+\texttt{open$\langle any/right \rangle$} & Inicia cap. en cualquier página o sólo a la dcha.
 \end{tabular}
 
 
@@ -128,25 +125,24 @@
 \settowidth{\MyLen}{\texttt{.multicol.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\texttt{babel}		& Soporte multilingue [\texttt{spanish}, \texttt{english}]\\
-\texttt{geometry}	& Definición de geometría de la página (tamaño y márgenes)\\
+\texttt{babel}		& Soporte multilingue (\texttt{spanish}, \texttt{english}, etc.).\\
+\texttt{geometry}	& Definición de geometría de la página (tamaño y márgenes).\\
+\texttt{fontenc}	& Codificación de salida [\texttt{T1}] (usar en español).\\
 \texttt{textcomp}	& Misc. símbolos (también \texttt{fontawesome5}, \texttt{pifont} y \texttt{marvosym}). \\
-\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{symb}, \texttt{fonts})\\
-\texttt{fontenc}	& Codificación de salida [\texttt{T1}]\\
-%\texttt{setspace}	& Esp. interlineal (Ops.:\texttt{{single}, \texttt{double}, \texttt{onehalf}}\texttt{spacing}). \\
-\texttt{enumitem}	& Mejora el control de listas\\
-\texttt{booktabs}	& Tablas mejoradas\\
-\texttt{hyperref}	& Creación de PDF enriquecidos\\
-\texttt{graphicx}	& Inclusión de figuras\\
-\texttt{rotating}	& Rotación de objetos (colocación apaisada de fíguras y tablas)\\
-\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF\\
-%\texttt{caption}	& Configuración de títulos de figuras y tablas \\
-%\texttt{secsty}	& Configuración de títulos de secciones \\
+%\texttt{ams}$\langle ccc \rangle$ & Inc. de elementos matemáticos (con $ccc=$\texttt{math}, \texttt{symb}, \texttt{fonts}).\\
+\texttt{setspace}	& Esp. interlineal (Ops.:\texttt{{single}, \texttt{double}, \texttt{onehalf}}\texttt{spacing}). \\
+\texttt{enumitem}    & Con opc. \texttt{shortlabels}, mejora el control de listas.\\
+\texttt{hyperref}	& Facilita la obtención de PDF enriquecidos.\\
+\texttt{pdfpages}	& Permite insertar páginas de un fichero PDF.\\
 \texttt{fancyhdr}	& Facilita la \emph{conf}. nativa de cabeceras y pies de página.\\
-%\texttt{parskip}	& Control de espaciado entre párrafos\\
-%\texttt{multicol}	& Listas en varias columnas\\
-\texttt{listings}	& Permite insertar porciones de código fuente\\
-%\texttt{etex}		& Soluciona errores de desbordamiento\\
+\texttt{graphicx}	& Para inclusión y manipulación de figuras.\\
+\texttt{booktabs}	& Ayuda a la creación de tablas mejoradas.\\
+\texttt{listings}	& Permite insertar porciones de código fuente,\\
+%\texttt{rotating}	& Rotación de objetos (colocación apaisada de fíguras y tablas).\\
+%\texttt{caption}	& Configuración de títulos de figuras y tablas.\\
+%\texttt{secsty}	& Configuración de títulos de secciones. \\
+%\texttt{parskip}	& Control de espaciado entre párrafos.\\
+%\texttt{multicol}	& Listas en varias columnas.\\
 \end{tabular}
 
 
@@ -156,16 +152,16 @@
 \settowidth{\MyLen}{\texttt{.lstlistoflistings.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\title{!\emph{texto}\verb!}!	& Título del documento\\
-\verb!\author{!\emph{texto}\verb!}!	& Autor del documento\\
-\verb!\date{!\emph{texto}\verb!}!	& Fecha (\verb+\today+, genera fecha actual) \\
-\verb!\begin{document}! 			& Declaración de inicio tras el preámbulo\\
+\verb!\title{!\emph{texto}\verb!}!	& Título del documento.\\
+\verb!\author{!\emph{texto}\verb!}!	& Autor del documento.\\
+\verb!\date{!\emph{texto}\verb!}!	& Fecha (\verb+\today+, genera fecha actual). \\
+\verb!\begin{document}! 			& Declaración de inicio tras el preámbulo.\\
 \verb!\maketitle! 					& Genera pág. de título con info\ suministrada. \\
-\verb!\tableofcontents! 			& Crea el índice de contenidos (TOC)\\
-\verb!\listof<!\emph{elem.}\verb!>! & Lista de (\texttt{figures}, \texttt{tables}, \texttt{listings})  \\
+\verb!\tableofcontents! 			& Crea el índice de contenidos (TOC).\\
+\verb!\listof<!\emph{elem.}\verb!>! & Lista de (\texttt{figures}, \texttt{tables}, \texttt{listings}).  \\
 %\verb!\listoftables!    			& Lista de cuadros (tablas) \\
 %\verb!\lstlistoflistings!    		& Lista de listados \\
-\verb!\begin{abstract}! 			& Resumen del documento \\[0.7mm] 
+\verb!\begin{abstract}! 			& Resumen del documento. \\[0.7mm] 
 \end{tabular}
 
 
@@ -173,8 +169,8 @@
 
 %-------------------------
 \subsection{Pies y cabeceras}
-\verb!\pagestyle{!\emph{sty.}\verb!}!: Estilo (\texttt{empty}, \texttt{plain}, \texttt{headings} y \texttt{myheadings})\\
-\verb!\thispagestyle{!\emph{sty.}\verb!}!: Estilo sólo aplicado a pág. actual\\
+\verb!\pagestyle{!\emph{sty.}\verb!}!: Estilo (\texttt{empty}, \texttt{plain}, \texttt{headings} y \texttt{myheadings}).\\
+\verb!\thispagestyle{!\emph{sty.}\verb!}!: Estilo sólo aplicado a pág. actual.\\
 
 
 
@@ -190,11 +186,11 @@
 \end{multicols}
 
 
-$^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) \\[0.7mm]
-\verb!\section*{!\emph{título}\verb!}!: sección sin numerar, ni incluida en TOC\\
-\verb!\setcounter{secnumdepth}{!$x$\verb!}!: suprime la numeración al nivel $>x$
-\verb!\setcounter{tocdepth}{!$x$\verb!}!: suprime del TOC las secciones de nivel $>x$
-\verb!\the!$\langle cnt \rangle$: imprime el valor del contador $cnt$ (el valor de $cnt$ puede ser \texttt{page}, \texttt{chapter}, \texttt{section}, etc.)
+$^*$Cuando se suministra, un \emph{título corto}, este aparece en el (TOC). \\[0.7mm]
+\verb!\section*{!\emph{título}\verb!}!: Sección sin numerar, ni incluida en TOC.\\
+\verb!\setcounter{secnumdepth}{!$x$\verb!}!: Suprime la numeración al nivel $>x$.
+\verb!\setcounter{tocdepth}{!$x$\verb!}!: Suprime del TOC las secciones de nivel $>x$.
+\verb!\the!$\langle cnt \rangle$: Imprime el valor de $cnt$ (contador que puede ser \texttt{page}, \texttt{chapter}, \texttt{section}, etc.).
 
 
 
@@ -203,15 +199,15 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) 
 
 %-------------------------
 %-------------------------
-\subsection{Referencias cruzadas y notas al pie}
+\subsection{Notas al pie y referencias cruzadas}
 \settowidth{\MyLen}{\texttt{.pageref.marker..}}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\label{!\emph{id.label}\verb!}!   &  Marca (p.ej. \texttt{sec:item}) para una referencia \\
-\verb!\ref{!\emph{id.label}\verb!}!   &  Genera el nº de sección \\
-\verb!\pageref{!\emph{id.label}\verb!}! &  Genera el nº de página \\
-%\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración \\
 \verb!\footnote{!\emph{nota}\verb!}!  &  Genera una nota al pie de página \\
+\verb!\label{!\emph{id.label}\verb!}!   &  Marca (p.ej. \texttt{sec:item}) para una referencia. \\
+\verb!\ref{!\emph{id.label}\verb!}!   &  Genera el nº de (sección, figura, ecuación, etc.). \\
+\verb!\pageref{!\emph{id.label}\verb!}! &  Genera el nº de página del elemento referenciado. \\
+%\verb!\autoref{!\emph{id.label}\verb!}! &  Con paquete \texttt{hyperref} genera sec. y numeración \\
 \end{tabular}
 
 
@@ -219,18 +215,16 @@ $^*$Cuando se suministra, un \emph{título corto} es el que aparece en el (TOC) 
 
 
 %-------------------------
-\subsection{Listas}
+\subsection{Listas con viñetas y enumeradas}
 \settowidth{\MyLen}{\texttt{.begin.dingautolist.....}}
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{enumerate}!        &  Enumeración \\
-%\verb!\begin{compactenum}!      &  Enumeración compacta (paquete \texttt{paralist})\\
-\verb!\begin{dingautolist}{!$n$\verb!}!    &  Enumeración desde símbolo \texttt{dingbat} $n$\\
-\verb!\begin{itemize}!          &  Lista marcada \\
-%\verb!\begin{compactitem}!      &  Lista marcada compacta (paquete \texttt{paralist}) \\
-\verb!\begin{dinglist}{!$n$\verb!}!   &  Lista marcada con símbolo $n$ \texttt{dingbat}.\\
-\verb!\begin{description}!      &  Lista descriptiva. \\
-\verb!\begin{multicol}{<n>}!    &  Lista en $n$ columnas (paquete \texttt{multicol}) \\[0.5mm]
+\verb!\begin{itemize}!     &  Lista con viñetas. \\
+\verb!\begin{enumerate}!   &  Lista enumerada (enumeración). \\
+\verb!\begin{description}! &  Lista descriptiva. \\
+\verb!\begin{dinglist}{!$n$\verb!}!   &  Lista con viñeta (cod.$n$) de tabla \texttt{dingbat}.\\
+\verb!\begin{dingautolist}{!$n$\verb!}! &  Enumeración desde símbolo \texttt{dingbat} $n$.\\
+%\verb!\begin{multicol}{<n>}!    &  Lista en $n$ columnas (paquete \texttt{multicol}) \\[0.5mm]
 \end{tabular}
 
 \verb!\item[!\emph{c}\verb!]! \emph{texto}: Entrada de lista usando \emph{c} como marca (obligado en \emph{descrip.})\\
@@ -290,9 +284,9 @@ frente \verb!\textit{!\textit{texto}\verb!}!.\\[3mm]
 
 \begin{tabular}{@{}lll@{}}
 \emph{Entorno}  &  \emph{Declaración}  & \emph{Efecto}\\ \hline
-\verb!\begin{center}!      & \verb!\centering!  & \makebox[15ex][c]{centrado} \\
-\verb!\begin{flushleft}!  & \verb!\raggedright! & \makebox[15ex][r]{just. dcha.}\\
-\verb!\begin{flushright}! & \verb!\raggedleft!  & \makebox[15ex][l]{just. izda.}\\[0.7mm]
+\verb!\begin{center}!      & \verb!\centering!  & |\makebox[15ex][c]{centrado}| \\
+\verb!\begin{flushleft}!  & \verb!\raggedright! & |\makebox[15ex][r]{just. dcha.}|\\
+\verb!\begin{flushright}! & \verb!\raggedleft!  & |\makebox[15ex][l]{just. izda.}|\\[0.7mm]
 \end{tabular}
 
 \textbf{Variables de longitud}\\
